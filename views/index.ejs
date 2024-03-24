@@ -1,0 +1,75 @@
+<%- include('partials/head') %>
+
+
+<section class="container">
+    <h1 class="heading title"> Lessons</h1>
+    <h2 class="heading">Own playlists</h2>
+<!-- PLAYLIST -->
+
+    <section class="ul-playlist">
+        <div class="more-items">
+            <img src="/images/icons/white-plus.svg" alt="plus">
+            <h3 class="heading">Make a playlist!</h3>
+            <p class="heading">Add your favorite stories in one playlist</p>
+        </div> 
+        <% playlist.forEach(playlistItem => { %>
+            <article class="playlist-item">
+                <a href="/playlist/<%= playlistItem.id %>">
+                <img src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                <h3><%= playlistItem.title %></h3>
+            </a>
+            </article>
+       <% }); %>
+
+    </section>
+    <%- include('partials/menu') %>
+    <!-- STORIES -->
+    <section>
+        <h2 class="heading">All stories</h2>
+        <div class="box-language">
+            <button class="first-language"> <img src="/images/icons/nederlandse-flag.png" alt="nederlandse flag"> Dutch</button>
+            <button class="second-language"><img src="/images/icons/engelse-flag.svg" alt="engelse flag"> English</button>
+            <a class=" heading a-showAll" href="/lessons/allStories"> Show All</a>
+        </div>
+    </section>
+   
+    <section class="ul-lessons-stories">
+        <% stories.forEach(story => {%>
+            <article class="li-story">
+                <img class="img-story" src="https://fdnd-agency.directus.app/assets/<%= story.image %>" alt="story image">
+                <h2 class="story-title">
+                    <%= story.title %> 
+                </h2> 
+                <p class="story-summary"> 
+                    <%= story.summary %>
+                </p>
+                <img class="image-flag" src="/images/icons/engelse-flag.svg" alt="flag">
+                <div class="story-interactions">
+                    <img class="icon-playbutton" src="/images/icons/play-button.svg" alt="play button icon">
+                    <img class="icon-download" src="/images/icons/cloud-download-outline.svg" alt="download icon">
+                </div>
+            </article>
+       <% });  %>
+    </section>
+    <!-- favorieten playlist -->
+    <h1 class="heading">favorite playlists</h1>
+    <section class="ul-favorite-playlist">
+ 
+        <% playlist.forEach(playlistItem => { %>
+            <article class="playlist-item">
+                <a class="content-card" href="/playlist/<%= playlistItem.id %>">
+                <img class="playlist-image" src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                <h3 class="playlist-title"><%= playlistItem.title %></h3>
+            </a>
+            <form action="" method="POST">
+                <button class="heart-button"><img class="heart" src="/images/icons/Heart.svg" alt="heart icon"></button>
+            </form>
+            </article>
+           
+            
+       <% }); %>
+
+    </section>
+</section>
+
+<%- include('partials/foot') %>

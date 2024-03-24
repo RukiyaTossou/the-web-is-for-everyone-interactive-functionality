@@ -1,0 +1,20 @@
+.ul-p-favorite-laylist {
+    display: flex;
+}
+
+.content-card {
+
+}
+
+.heart-button{
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}   
+
+
+
+.heart {
+    background-color: red;
+   
+}
