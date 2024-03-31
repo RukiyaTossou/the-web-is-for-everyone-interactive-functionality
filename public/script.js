@@ -2,7 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const hamburgerButton = document.querySelector('.menu-button');
     const menu = document.querySelector('.menu-container');
     const closeIcon = document.querySelector('.menu-close-button');
-
+    // popup
+    const addButtonlist = document.querySelectorAll('.btn-add');
+    const popup = document.querySelector('.popup-container');
+    const closeButton = document.querySelector('.close-btn-popup');
+   
     hamburgerButton.addEventListener("click", toggleMenu);
     closeIcon.addEventListener("click", toggleMenu);
 
@@ -20,5 +24,25 @@ document.addEventListener("DOMContentLoaded", function() {
             menu.style.display = "none";
         }
     }
-    
+
+    // pop up
+    addButtonlist.forEach(function(addButton) {
+        addButton.addEventListener("click", togglePopup);
+    });
+
+    closeButton.addEventListener("click", togglePopup);
+
+    function togglePopup() {
+        popup.classList.toggle("showPopup");
+
+        if (popup.classList.contains("showPopup")) {
+  
+            popup.style.display = "none";
+        } else {
+          
+            popup.style.display = "block";
+        }
+
+    }
+
 });

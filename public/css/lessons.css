@@ -9,7 +9,6 @@
     --lessons-dark-text-color:#000000;
 
     /*  */
-
     /* font */
     --lessons-h1-font:"Poppins", sans-serif;
     --lessons-h1-fontSize: 1.8rem;
@@ -23,21 +22,22 @@
 }
 
 .container {
-
     & .ul-playlist {
         display: flex;
-        max-width: 100%;
+        width:23rem;
+    
         overflow-x:scroll;
         
         & .more-items {
             padding: 1rem;
+            width:6rem;
             border-radius: 0.5rem;
         }
 
         & .playlist-item {
             background-color: var(--lessons-h1-color);
             height: 16rem;
-            width: 13rem;
+            width: 15rem;
             margin-right: 0.5rem;
             border-radius:0.5rem;
             text-align: center;
@@ -57,46 +57,88 @@
             }
         }
     }
+
+    .box-language {
+        width:100%;
+
+        & .a-showAll { 
+            text-decoration: none; 
+              margin-left: 3rem;
+            
+        }
+    
+        & .first-language, & .second-language {
+            border: none; 
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-right: 0.2rem;
+            font-weight: 600; 
+        }
+    }
+
+  
     /* Stories */
     .ul-lessons-stories {
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
         padding-top: 0.8rem;
 
-        
        & .li-story {
         background-color: var(--lessons-story-box);
-        width:24rem;
-        height:6rem ;
+        width:23rem;
+        height: 6rem ;
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+       
 
         & .img-story {
             height:5rem;
             width: 5rem;
             object-fit: cover;
-            padding:0.5rem;
+            padding: 0.5rem;
        } 
+
        & .story-title {
         font-size: var(--lessons-h2-title-fontSize);
+        white-space: nowrap;
        }
 
         & .story-summary {
-            position: relative;
-            font-size:0.9rem;
+            font-size: 0.9rem;
+            width:20rem;
        }
+       & .image-flag {
+        position: relative;
+        top: 0.5rem;
+        left: 14.4rem;
+    }
+    
+       & .story-interactions {
+        
+       }
+       & .btn-add {
+            background-color: transparent;
+            border:none;
+            cursor: pointer;
+       }
+       & .icon-download {
+            align-self: end;
+       }
+
     }
  }
  .ul-favorite-playlist{
-     display:flex;
-     overflow-x:scroll;
+     display: flex;
+     overflow-x: scroll;
+     overflow-y: none;
+
         & .playlist-item{
             background-color: var(--lessons-story-box);
             height: 15rem;
-            width:12rem;
-            margin-left:0.5rem;
+            width: 12rem;
+            margin-left: 0.5rem;
             border-radius:var(--border-radius-standard);
             text-align: center;
 
@@ -107,13 +149,25 @@
                     height: 8rem;
                     width: 8rem;
                     object-fit: cover;
-                    padding:0.5rem;
-               
+                    padding: 0.5rem;
                 }
             }
         }   
     }
 }
+/* POP-up */
+.popup-container {
+    display: none;
+    background-color: var(--lessons-h1-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.showPopup{
+    display: block;
+}
+
 
 /* GRID STORY */
 .li-story .img-story {
@@ -125,11 +179,13 @@
 .li-story .story-title {
     grid-column: 2 / 3;
     grid-row: 1;
+
 }
 
 .li-story .story-summary {
-    grid-column: 2 / 3;
+    grid-column: 2 / 3 ;
     grid-row: 2;
+  
 }
 
 .li-story .image-flag {
