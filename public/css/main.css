@@ -25,7 +25,7 @@
     --lessons-h1-font-weight: 600;
 
     /* paddding/layout */
-    --lessons-story-box-width:22.9rem;;
+    --lessons-story-box-width: 22.9rem;;
 }
 
 body {
@@ -41,5 +41,10 @@ h1 {
     color: var(--text-color-light);
 }
 .title {
+    text-align: center;
+}
+.sub-title {
+    color: var(--text-color-dark);
+    font-size: 1rem;
 
 }

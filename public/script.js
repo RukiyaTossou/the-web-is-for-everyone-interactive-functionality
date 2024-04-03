@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const popup = document.querySelector('.popup-container');
     const closeButton = document.querySelector('.close-btn-popup');
    
+    // heart button
+    const heartbutton = document.querySelectorAll('.heart-button');
+    const heartIcon = document.querySelectorAll('.heart-img');
+
+
     hamburgerButton.addEventListener("click", toggleMenu);
     closeIcon.addEventListener("click", toggleMenu);
 
@@ -44,5 +49,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
     }
+
+
+// heart button
+heartbutton.forEach(function(hButton) {
+    hButton.addEventListener("click", toggleHeartButton);
+});
+
+
+
+// Function to toggle the 'filled' class on the heart button
+function toggleHeartButton() {
+    // Find the corresponding heart icon for the clicked button
+    const heartIcon = this.querySelector('.heart-img');
+
+    if (heartIcon.classList.contains('filled')) {
+        // Remove the 'filled' class to unfill the heart
+        heartIcon.classList.remove('filled');
+    } else {
+        // Add the 'filled' class to fill the heart
+        heartIcon.classList.add('filled');
+    }
+}
+
+
 
 });

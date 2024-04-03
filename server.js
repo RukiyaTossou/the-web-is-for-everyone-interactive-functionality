@@ -34,7 +34,7 @@ app.get('/', function(request, response) {
 		response.render('home')
     
 	});
-})
+});
 
 //Lessons 
 app.get('/lessons', function(request, response) {
@@ -46,14 +46,33 @@ response.render('index', {
 })
 
 //playlsit/id
-app.get('playlist/:id', function(request, response) {
+app.get('/playlist/:id', function(request, response) {
     response.render('playlist', {
         playlist: playlistsAPI.data,
         stories: storiesAPI.data
     });
 })
 
-//POST 
+//Lessons 
+app.get('/lessons/allStories', function(request, response) {
+    // Render index.ejs uit de views map
+response.render('stories', {
+    stories: storiesAPI.data, 
+    playlist: playlistsAPI.data
+    });
+})
+
+//POST en GET
+// Een tijdelijke let  om afspeellijstgegevens op te slaan
+let favPlaylists = [];
+// 
+//
+
+app.post('/lessons', function(request, response) { //post route voor lessons
+    //let playlist aan maken met bestaande playlsit id
+    
+      
+});
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

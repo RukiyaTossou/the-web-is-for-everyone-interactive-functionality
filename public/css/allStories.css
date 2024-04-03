@@ -1,0 +1,32 @@
+.Filter {
+    background-color: #9264F4;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.searchbar {
+    margin-bottom: 0.5rem;
+}
+
+.search-icon {
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+}
+
+.li-stories {
+        background-color: var(--lessons-story-box);
+        width:24rem;
+        height: 7rem ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+}
+
+#search-story {
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border:  none;
+    width:20rem;     
+}

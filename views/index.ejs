@@ -10,7 +10,6 @@
         <div class="more-items">
             <img src="/images/icons/white-plus.svg" alt="plus">
             <h3 class="heading">Make a playlist!</h3>
-            <p class="heading">Add your favorite stories in one playlist</p>
         </div> 
         <% playlist.forEach(playlistItem => { %>
             <article class="playlist-item">
@@ -18,6 +17,7 @@
                 <img src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
                 <h3><%= playlistItem.title %></h3>
             </a>
+            
             </article>
        <% }); %>
 
@@ -54,27 +54,41 @@
                 </div>
             </article>
        <% });  %>
+
        <section class="popup-container">
-        <h1>add to playlist</h1>
-        <button class="close-btn-popup">close</button>
-        </section>
+        <button type="button" class="close-btn-popup">Close</button>
+        <h1 class=" heading"> Add to playlist </h1>
+        <form action="/lessons" method="POST">
+            <% playlist.forEach(playlistItem => { %>
+                <article class="playlist-item">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                    <h3 class="heading"><%= playlistItem.title %></h3>
+                    <input type="radio" class="radio-botton" name="playlist" value="<%= playlistItem.id %>">
+                </article>
+            <% }); %>
+         
+            <button class="opslaan-button" type="submit">Toevoegen</button>
+            
+        </form>
+    </section>
+
     </section>
     <!-- favorieten playlist -->
     <h1 class="heading">favorite playlists</h1>
     <section class="ul-favorite-playlist">
  
         <% playlist.forEach(playlistItem => { %>
-            <article class="playlist-item">
+            <article class="playlist-item-fav">
                 <a class="content-card" href="/playlist/<%= playlistItem.id %>">
-                <img class="playlist-image" src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
-                <h3 class="playlist-title"><%= playlistItem.title %></h3>
-            </a>
+                    <img class="fav-playlist-image" src="https://fdnd-agency.directus.app/assets/<%= playlistItem.image %>" alt="playlist image">
+                    <h3 class="playlist-title"><%= playlistItem.title %></h3>
+                </a>
             <form action="" method="POST">
-                <button class="heart-button"><img class="heart" src="/images/icons/Heart.svg" alt="heart icon"></button>
+                <button class="heart-button"> <svg class="heart-img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.6536 7.15238C11.8471 7.33832 12.1529 7.33832 12.3464 7.15238C13.1829 6.34871 14.326 5.75 15.6 5.75C18.1489 5.75 20.25 7.64769 20.25 10.0298C20.25 11.7261 19.4577 13.1809 18.348 14.428C17.2397 15.6736 15.7972 16.7316 14.4588 17.6376L12.1401 19.207C12.0555 19.2643 11.9445 19.2643 11.8599 19.207L9.54125 17.6376C8.20278 16.7316 6.76035 15.6736 5.65201 14.428C4.54225 13.1809 3.75 11.7261 3.75 10.0298C3.75 7.64769 5.85106 5.75 8.4 5.75C9.67403 5.75 10.8171 6.34871 11.6536 7.15238Z" stroke="#C4C4C4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg></button>
             </form>
             </article>
-           
-            
        <% }); %>
 
     </section>
