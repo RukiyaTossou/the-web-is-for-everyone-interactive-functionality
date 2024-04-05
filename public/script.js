@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // heart button
     const heartbutton = document.querySelectorAll('.heart-button');
     const heartIcon = document.querySelectorAll('.heart-img');
+   
 
 
     hamburgerButton.addEventListener("click", toggleMenu);
@@ -71,6 +72,9 @@ function toggleHeartButton() {
         heartIcon.classList.add('filled');
     }
 }
+
+
+
 
 
 

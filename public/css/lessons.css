@@ -30,7 +30,7 @@
         & .more-items {
             padding: 1rem;
             width:8rem;
-           
+            height:6rem;
             border-radius: 0.5rem;
         }
 
@@ -209,6 +209,17 @@
     display: block;
 }
 
+.ul-lessons-stories::-webkit-scrollbar {
+    width: 1px; /* Width of the scrollbar */
+    height: 0.5rem;
+  }
+  
+  .ul-lessons-stories::-webkit-scrollbar-thumb {
+    background-color: #6865658d; /* Color of the thumb */
+    border-radius: 1rem; /* Rounded corners */
+  }
+  
+
 
 
 
@@ -275,7 +286,7 @@
 }
 .heart-img {
     scale:0.8;
-    fill: red;
+    fill: white;
     
     
 }
@@ -285,5 +296,5 @@
 }
 
 .heart-img:hover {
-    fill: rgb(233, 10, 10);
+    fill:white;
 }
